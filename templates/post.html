@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Diagora: {{ post["title"] }}{% endblock %}
+{% block body %}
+  <h1>{{ post["title"] }}</h1>
+  <div class="body">
+    {{ post["body"]|safe }}
+  </div>
+{% endblock %}
+{% block js %}
+{% endblock %}

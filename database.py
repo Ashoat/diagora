@@ -1,5 +1,6 @@
 import os
 import psycopg2
+import psycopg2.extras
 import urlparse
 from flask import Flask, g
 
@@ -26,3 +27,10 @@ def close_connection(exception):
   db = getattr(g, 'db', None)
   if db is not None:
     db.close()
+
+def select(query, args=()):
+  cursor = get_db().cursor(cursor_factory=psycopg2.extras.DictCursor)
+  cursor.execute(query, args)
+  results = cursor.fetchall()
+  cursor.close()
+  return results

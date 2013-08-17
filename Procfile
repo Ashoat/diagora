@@ -1,1 +1,1 @@
-web: gunicorn diagora:app
+web: gunicorn home:app
