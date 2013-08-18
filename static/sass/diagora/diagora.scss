@@ -1,4 +1,4 @@
-@import "pages/post", "pages/index";
+@import "pages/post", "pages/index", "pages/login", "pages/register", "pages/error";
 
 body > header { @extend %toplevel; @extend %clearafter;
     margin-top: modular_scale(1);
@@ -7,11 +7,15 @@ body > header { @extend %toplevel; @extend %clearafter;
     h1 { @extend %smalltitle;
         font-size: modular_scale(2);
         margin-right: 3em;
-        color: $color_vivid;
+        float: left;
+
+        a {
+            color: $color_vivid;
+        }
     }
 
     nav {
-        float: left;
+        float: right;
         font-size: modular_scale(-5);
         margin-top: ((modular_scale(2) - 1em) * modular_ratio(0, -5)) / 2;
 
@@ -19,6 +23,8 @@ body > header { @extend %toplevel; @extend %clearafter;
             padding: 0;
             li {
                 list-style-type: none;
+                float: left;
+                margin-right: 2em;
 
                 a { @extend %smalltitle;
                     color: $color_vivid;
@@ -31,4 +37,49 @@ body > header { @extend %toplevel; @extend %clearafter;
     padding-bottom: modular_scale(1);
     border-bottom: 2px solid $color_vivid;
     margin-bottom: modular_scale(1);
+}
+
+section { @extend %body; @extend %toplevel;
+    h1, h2, h3, h4, h5, h6 { @extend %bigtitle;
+
+    }
+
+    h1 {
+        font-size: modular_scale(4);
+        margin-bottom: 1em * modular_ratio(0, 4);
+    }
+}
+
+form {
+    input[type="text"], input[type="password"], input[type="datetime-local"], input[type="number"],
+    input[type="email"], textarea, select { @extend %field;
+
+    }
+
+    input[type="submit"] { @extend %button; @extend %clearafter;
+        margin-top: 1em;
+        float: right;
+    }
+
+    ul.errors {
+        color: #f00;
+        padding-top: 3em;
+        text-align: right;
+    }
+
+    div.field { @extend %clearafter;
+        margin-top: 1em;
+
+        label {
+            float: left;
+            width: 15%;
+            margin-top: 0.9em;
+        }
+
+        input {
+            float: right;
+            width: 80%;
+            margin-left: 5%;
+        }
+    }
 }
