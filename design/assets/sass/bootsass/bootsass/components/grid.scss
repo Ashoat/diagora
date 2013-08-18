@@ -1,0 +1,62 @@
+%toplevel { @extend %clearafter;
+    width: $page_width;
+    margin: 0 auto;
+}
+
+%span {
+    display: block;
+    float: left;
+    margin: $box_margin;
+}
+
+%span1, %span2, %span3, %span4, %span5, %span6, %span7, %span8, %span9, %span10, %span11, %span12 {
+    @extend %span;
+}
+
+%span1 {
+    width: ($page_width * (1/12)) - ($box_margin * 2);
+}
+
+%span2 {
+    width: ($page_width * (2/12)) - ($box_margin * 2);
+}
+
+%span3 {
+    width: ($page_width * (3/12)) - ($box_margin * 2);
+}
+
+%span4 {
+    width: ($page_width * (4/12)) - ($box_margin * 2);
+}
+
+%span5 {
+    width: ($page_width * (5/12)) - ($box_margin * 2);
+}
+
+%span6 {
+    width: ($page_width * (6/12)) - ($box_margin * 2);
+}
+
+%span7 {
+    width: ($page_width * (7/12)) - ($box_margin * 2);
+}
+
+%span8 {
+    width: ($page_width * (8/12)) - ($box_margin * 2);
+}
+
+%span9 {
+    width: ($page_width * (9/12)) - ($box_margin * 2);
+}
+
+%span10 {
+    width: ($page_width * (10/12)) - ($box_margin * 2);
+}
+
+%span11 {
+    width: ($page_width * (11/12)) - ($box_margin * 2);
+}
+
+%span12 {
+    width: ($page_width) - ($box_margin * 2);
+}

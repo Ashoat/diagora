@@ -1,0 +1,52 @@
+@mixin rounded($topleft_or_all, $topright: null, $bottomright: null, $bottomleft: null) {
+
+    @if ($topright == null) {
+        $topright: $topleft_or_all;
+    }
+
+    @if ($bottomright == null) {
+        $bottomright: $topleft_or_all;
+    }
+
+    @if ($bottomleft == null) {
+        $bottomleft: $topleft_or_all;
+    }
+
+    -webkit-border-top-left-radius: $topleft_or_all;
+    -webkit-border-top-right-radius: $topright;
+    -webkit-border-bottom-left-radius: $bottomleft;
+    -webkit-border-bottom-right-radius: $bottomright;
+    -moz-border-radius-topleft: $topleft_or_all;
+    -moz-border-radius-topright: $topright;
+    -moz-border-radius-bottomleft: $bottomleft;
+    -moz-border-radius-bottomright: $bottomright;
+    border-top-left-radius: $topleft_or_all;
+    border-top-right-radius: $topright;
+    border-bottom-left-radius: $bottomleft;
+    border-bottom-right-radius: $bottomright;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur_or_color, $spread_or_color: null, $color: null)
+{
+    @if ($spread_or_color == null) {
+        $color: $blur_or_color;
+        $blur_or_color: null;
+    } @else if ($color == null) {
+        $color: $spread_or_color;
+        $spread_or_color: null;
+    }
+
+    -moz-box-shadow:     $horizontal $vertical $blur_or_color $spread_or_color $color;
+    -webkit-box-shadow:  $horizontal $vertical $blur_or_color $spread_or_color $color;
+    box-shadow:           $horizontal $vertical $blur_or_color $spread_or_color $color;
+}
+
+@mixin background-gradient ($start, $end)
+{
+    background-image: -ms-linear-gradient(top, $start 0%, $end 100%);
+    background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
+    background-image: -o-linear-gradient(top, $start 0%, $end 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $start), color-stop(1, $end));
+    background-image: -webkit-linear-gradient(top, $start 0%, $end 100%);
+    background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+}

@@ -1,0 +1,77 @@
+@function generate_modular_scale($base_size, $base_size_alt, $ratio, $count)
+{
+    $list: ();
+    $sign: 1;
+
+    @if ($count == 0) {
+        @return ($base_size);
+    } @else if ($count < 0) {
+        $count: -1 * $count;
+        $sign: -1;
+    }
+
+    $count: $count + 1;
+
+    @for $i from 0 through $count {
+        $list: append($list, $base_size * pow($ratio, $i));
+        $list: append($list, $base_size_alt * pow($ratio, $i));
+
+        $list: append($list, $base_size * pow($ratio, -1 * $i));
+        $list: append($list, $base_size_alt * pow($ratio, -1 * $i));
+    }
+
+    $list: unique(sort($list));
+
+    $index: index($list, $base_size);
+    $list: slice($list, $index, $sign * $count);
+
+    @return $list;
+}
+
+$modular_scale_cache_positive: ();
+$modular_scale_cache_negative: ();
+@function modular_scale_get_cache($i)
+{
+    $cache: null;
+    @if ($i < 0) {
+        $cache: $modular_scale_cache_negative;
+        $i: -1*$i;
+    } @else if($i > 0) {
+        $cache: $modular_scale_cache_positive;
+    } @else {
+        @return $font_base_size;
+    }
+
+    @if (length($cache) < $i) {
+        @return null;
+    } @else {
+        @return nth($cache, $i);
+    }
+}
+
+@function modular_scale_set_cache($i, $obj)
+{
+    @if ($i < 0) {
+        $i: -1*$i;
+        $modular_scale_cache_negative: set-nth($modular_scale_cache_negative, $i, $obj);
+    } @else {
+        $modular_scale_cache_positive: set-nth($modular_scale_cache_positive, $i, $obj);
+    }
+
+    @return null;
+}
+
+@function modular_scale($step)
+{
+    @if (modular_scale_get_cache($step) == null) {
+        $scale: generate_modular_scale($font_base_size, $font_base_size_alt, $font_ratio, $step);
+        $value: nth($scale, abs($step) + 1);
+        $discard: modular_scale_set_cache($step, $value);
+    }
+
+    @return modular_scale_get_cache($step);
+}
+
+@function modular_ratio($previous, $current) {
+    @return modular_scale($previous)/modular_scale($current);
+}

@@ -1,0 +1,29 @@
+$font_base_size: 1.3em;
+$font_base_size_alt: 1.4em;
+$font_ratio: 1.168;
+$page_width: 980px;
+$box_margin: 12px;
+
+$color_vivid: #F9CA4B;
+$color_darker: #000;
+$color_dark: #404040;
+$color_light: #888;
+$color_lighter: #999;
+$color_lightest: #fff;
+$color_background: #dfdedd;
+
+%bigtitle {
+    font-family: "ff-meta-web-pro", sans-serif;
+}
+
+%body {
+    font-family: "chaparral-pro", serif;
+}
+
+%smalltitle {
+    font-family: "proxima-nova", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: $color_dark;
+}

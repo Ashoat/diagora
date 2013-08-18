@@ -1,0 +1,25 @@
+@import     "components/alerts",
+            "components/badges",
+            "components/buttons",
+            "components/forms",
+            "components/nav",
+            "components/grid"
+;
+
+%clearfix {
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+%clearafter {
+    &::after { @extend %clearfix;
+        content: "";
+    }
+
+    &:after { @extend %clearfix;
+        content: "";
+    }
+}

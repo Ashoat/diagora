@@ -1,0 +1,187 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased; }
+
+strong {
+  font-weight: bold; }
+
+small, sub, sup {
+  font-size: 0.55em; }
+
+sub {
+  vertical-align: sub; }
+
+sup {
+  vertical-align: super; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+section.content article header h1, section.content article header h2, section.content section.responses ul li a span.author, section.content section.responses ul li a span.title {
+  font-family: "ff-meta-web-pro", sans-serif; }
+
+section.content article p {
+  font-family: "chaparral-pro", serif; }
+
+section.content section.responses > h1, body > header h1, body > header nav ul li a {
+  font-family: "proxima-nova", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #404040; }
+
+section.content article, section.content section.responses, body > header {
+  width: 980px;
+  margin: 0 auto; }
+
+section.content article::after, section.content section.responses::after, body > header::after, section.content section.responses ul::after, section.content article:after, section.content section.responses:after, body > header:after, section.content section.responses ul:after {
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both; }
+
+section.content article::after, section.content section.responses::after, body > header::after, section.content section.responses ul::after {
+  content: ""; }
+section.content article:after, section.content section.responses:after, body > header:after, section.content section.responses ul:after {
+  content: ""; }
+
+section.content {
+  padding-bottom: 2em; }
+  section.content article {
+    width: 725.2px; }
+    section.content article header {
+      padding-bottom: 1em; }
+      section.content article header h1 {
+        font-size: 2.41944em;
+        font-weight: bold;
+        text-align: center; }
+      section.content article header h2 {
+        font-size: 1.3em;
+        font-weight: normal;
+        text-align: center;
+        color: #999999;
+        font-style: italic; }
+    section.content article hr {
+      margin-top: 0.95842em;
+      margin-bottom: 2.07144em;
+      border: none;
+      border-bottom: 1px solid #999999;
+      width: 70%; }
+    section.content article p {
+      font-size: 1.3em;
+      line-height: 1.4em;
+      padding-bottom: 1.11301em; }
+      section.content article p:last-child {
+        padding-bottom: 0; }
+    section.content article blockquote {
+      border-left: 5px solid #999999;
+      padding-left: 2em;
+      margin-left: -5px;
+      font-style: italic; }
+  section.content section.responses {
+    border-top: 2px solid #f9ca4b;
+    margin-top: 4em;
+    padding: 1em 127.4px; }
+    section.content section.responses > h1 {
+      color: #f9ca4b;
+      font-size: 1.77349em; }
+    section.content section.responses ul li {
+      float: left;
+      width: 48%;
+      margin: 1em 2% 2em 0;
+      display: block;
+      height: 5em;
+      /* This is the fading shitttttt */ }
+      section.content section.responses ul li a {
+        height: 5em;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        section.content section.responses ul li a span.author {
+          font-size: 1.11301em;
+          display: block;
+          color: #888888; }
+        section.content section.responses ul li a span.title {
+          font-size: 1.5184em;
+          display: block;
+          color: black; }
+      section.content section.responses ul li:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1em;
+        margin-top: -1em;
+        z-index: 1;
+        position: relative;
+        background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(1, white));
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+        margin-bottom: 0.7em;
+        border-bottom: 1px solid #999999; }
+
+body > header {
+  margin-top: 1.4em;
+  padding-bottom: 1.4em;
+  border-bottom: 2px solid #f9ca4b;
+  margin-bottom: 1.4em; }
+  body > header h1 {
+    float: left;
+    font-size: 1.5184em;
+    margin-right: 3em;
+    color: #f9ca4b; }
+  body > header nav {
+    float: left;
+    font-size: 0.87862em;
+    margin-top: 0.38351em; }
+    body > header nav ul {
+      padding: 0; }
+      body > header nav ul li {
+        list-style-type: none; }
+        body > header nav ul li a {
+          color: #f9ca4b;
+          font-weight: normal; }

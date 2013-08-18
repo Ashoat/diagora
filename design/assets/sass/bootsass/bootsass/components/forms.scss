@@ -1,0 +1,68 @@
+%field { @extend %body;
+    outline: none;
+    border: 1px solid $color_lighter;
+    @include rounded(3px);
+    padding: 0.5em;
+    display: block;
+    width: 100%;
+
+    font-size: 1em;
+
+    background-color: transparent;
+
+    &:focus {
+        outline: none;
+        border: 1px solid $color_vivid;
+    }
+}
+
+%button { @extend %smalltitle;
+    color: $color_lightest;
+    background-color: $color_dark;
+    border: 0;
+
+    @include rounded(3px);
+    padding: 1em;
+
+    text-transform: uppercase;
+    font-weight: bold;
+
+
+    @include box-shadow(0, 4px, 0, darken($color_vivid, 20%));
+}
+
+%span1 %span2, %span3, %span4, %span5, %span6 {
+    %button {
+        width: 100%;
+    }
+}
+
+%table {
+    thead { @extend %smalltitle;
+
+        font-size: modular_scale(-4);
+
+        tr td, tr th {
+            border-top: none;
+            padding: 0.5em 1em 0.5em 1em;
+        }
+    }
+
+    tbody {
+        td, th { @extend %body;
+            padding: 0.5em 1em 0.5em 0;
+            vertical-align: top;
+            border-top: 1px solid $color_lighter;
+            text-align: left;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    }
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    border-spacing: 0;
+}

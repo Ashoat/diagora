@@ -1,0 +1,105 @@
+section.content {
+    article { @extend %toplevel;
+
+        width: $page_width * 0.74;
+
+        header {
+            h1 { @extend %bigtitle;
+                font-size: modular_scale(8);
+                font-weight: bold;
+                text-align: center;
+            }
+
+            h2 { @extend %bigtitle;
+                font-size: modular_scale(0);
+                font-weight: normal;
+                text-align: center;
+                color: $color_lighter;
+                font-style: italic;
+            }
+
+            padding-bottom: 1em;
+        }
+
+        hr {
+            margin-top: modular_scale(6) - modular_scale(-2);
+            margin-bottom: modular_scale(6);
+            border: none;
+            border-bottom: 1px solid $color_lighter;
+            width: 70%;
+        }
+
+        p { @extend %body;
+            font-size: modular_scale(0);
+            line-height: modular_scale(1);
+            padding-bottom: modular_scale(-2);
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        blockquote {
+            border-left: 5px solid $color_lighter;
+            padding-left: 2em;
+            margin-left: -5px;
+            font-style: italic;
+        }
+    }
+
+    section.responses { @extend %toplevel;
+        border-top: 2px solid $color_vivid;
+        margin-top: 4em;
+        padding: 1em (($page-width * 0.26) / 2);
+
+        & > h1 { @extend %smalltitle;
+            color: $color_vivid;
+            font-size: modular_scale(4);
+        }
+
+        ul { @extend %clearafter;
+            li {
+                float: left;
+                width: 48%;
+                margin: 1em 2% 2em 0;
+                display: block;
+                height: 5em;
+
+                a {
+                    height: 5em;
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    span.author { @extend %bigtitle;
+                        font-size: modular_scale(-2);
+                        display: block;
+                        color: $color_light;
+                    }
+
+                    span.title { @extend %bigtitle;
+                        font-size: modular_scale(2);
+                        display: block;
+                        color: $color_darker;
+                    }
+                }
+
+                /* This is the fading shitttttt */
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 1em;
+                    margin-top: -1em;
+                    z-index: 1;
+                    position: relative;
+                    @include background-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+                    margin-bottom: 0.7em;
+                    border-bottom: 1px solid $color_lighter;
+                }
+            }
+        }
+    }
+
+    padding-bottom: 2em;
+}
