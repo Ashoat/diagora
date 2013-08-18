@@ -1,5 +1,4 @@
-@import "pages/post",
-         "pages/index";
+@import "pages/post", "pages/index";
 
 body > header { @extend %toplevel; @extend %clearafter;
     margin-top: modular_scale(1);
