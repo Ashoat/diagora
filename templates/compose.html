@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block header %}
+  <title>Diagora: Compose</title>
+{% endblock %}
+{% from "_form.html" import render_field %}
+{% block body %}
+  <h1>Compose a post</h1>
+  <div class="compose">
+    <form method="post">
+      <dl>
+        {{ render_field(form.title) }}
+        {{ render_field(form.body) }}
+      </dl>
+      <input type="submit" name="Submit" />
+    </form>
+  </div>
+{% endblock %}
+{% block js %}
+{% endblock %}
