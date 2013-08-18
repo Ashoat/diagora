@@ -1,0 +1,58 @@
+section.hero { @extend %toplevel; @extend %smalltitle;
+    padding: 0 3em;
+    font-size: modular_scale(5);
+
+    color: $color_lighter;
+
+    padding-bottom: 1em * modular_ratio(0, 5);
+    border-bottom: 2px solid $color_vivid;
+    margin-bottom: modular_scale(2);
+
+    text-align: center;
+}
+
+section.index { @extend %toplevel;
+    width: $page_width * 0.74;
+
+    ul { @extend %clearafter;
+        li {
+            display: block;
+            text-align: center;
+
+            a {
+                span.author { @extend %bigtitle;
+                    font-size: modular_scale(-1);
+                    color: $color_light;
+                    font-style: italic;
+                }
+
+                span.title { @extend %bigtitle;
+                    font-size: modular_scale(3);
+                    display: block;
+                    color: $color_darker;
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    height: 1.1em;
+                }
+
+                margin-bottom: 0.5em;
+                display: block;
+            }
+
+            p { @extend %body;
+                font-size: modular_scale(-2);
+                padding: 1em 2em;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                width: 10%;
+                border-bottom: 1px solid $color_vivid;
+                margin: 3em auto;
+            }
+        }
+    }
+}

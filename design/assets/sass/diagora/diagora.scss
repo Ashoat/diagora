@@ -1,11 +1,11 @@
-@import "pages/post";
+@import "pages/post",
+         "pages/index";
 
 body > header { @extend %toplevel; @extend %clearafter;
     margin-top: modular_scale(1);
 
 
     h1 { @extend %smalltitle;
-        float: left;
         font-size: modular_scale(2);
         margin-right: 3em;
         color: $color_vivid;

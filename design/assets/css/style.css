@@ -58,33 +58,33 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-section.content article header h1, section.content article header h2, section.content section.responses ul li a span.author, section.content section.responses ul li a span.title {
+section.content article header h1, section.content article header h2, section.content section.responses ul li a span.author, section.content section.responses ul li a span.title, section.index ul li a span.author, section.index ul li a span.title {
   font-family: "ff-meta-web-pro", sans-serif; }
 
-section.content article p {
+section.content article p, section.index ul li p {
   font-family: "chaparral-pro", serif; }
 
-section.content section.responses > h1, body > header h1, body > header nav ul li a {
+section.content section.responses > h1, section.hero, body > header h1, body > header nav ul li a {
   font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.1em;
   color: #404040; }
 
-section.content article, section.content section.responses, body > header {
+section.content article, section.content section.responses, section.hero, section.index, body > header {
   width: 980px;
   margin: 0 auto; }
 
-section.content article::after, section.content section.responses::after, body > header::after, section.content section.responses ul::after, section.content article:after, section.content section.responses:after, body > header:after, section.content section.responses ul:after {
+section.content article::after, section.content section.responses::after, section.hero::after, section.index::after, body > header::after, section.content section.responses ul::after, section.index ul::after, section.content article:after, section.content section.responses:after, section.hero:after, section.index:after, body > header:after, section.content section.responses ul:after, section.index ul:after {
   display: block;
   width: 0;
   height: 0;
   visibility: hidden;
   clear: both; }
 
-section.content article::after, section.content section.responses::after, body > header::after, section.content section.responses ul::after {
+section.content article::after, section.content section.responses::after, section.hero::after, section.index::after, body > header::after, section.content section.responses ul::after, section.index ul::after {
   content: ""; }
-section.content article:after, section.content section.responses:after, body > header:after, section.content section.responses ul:after {
+section.content article:after, section.content section.responses:after, section.hero:after, section.index:after, body > header:after, section.content section.responses ul:after, section.index ul:after {
   content: ""; }
 
 section.content {
@@ -164,13 +164,52 @@ section.content {
         margin-bottom: 0.7em;
         border-bottom: 1px solid #999999; }
 
+section.hero {
+  padding: 0 3em;
+  font-size: 1.90991em;
+  color: #999999;
+  padding-bottom: 0.68066em;
+  border-bottom: 2px solid #f9ca4b;
+  margin-bottom: 1.5184em;
+  text-align: center; }
+
+section.index {
+  width: 725.2px; }
+  section.index ul li {
+    display: block;
+    text-align: center; }
+    section.index ul li a {
+      margin-bottom: 0.5em;
+      display: block; }
+      section.index ul li a span.author {
+        font-size: 1.19863em;
+        color: #888888;
+        font-style: italic; }
+      section.index ul li a span.title {
+        font-size: 1.6352em;
+        display: block;
+        color: black;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height: 1.1em; }
+    section.index ul li p {
+      font-size: 1.11301em;
+      padding: 1em 2em; }
+    section.index ul li:after {
+      content: "";
+      display: block;
+      width: 10%;
+      border-bottom: 1px solid #f9ca4b;
+      margin: 3em auto; }
+
 body > header {
   margin-top: 1.4em;
   padding-bottom: 1.4em;
   border-bottom: 2px solid #f9ca4b;
   margin-bottom: 1.4em; }
   body > header h1 {
-    float: left;
     font-size: 1.5184em;
     margin-right: 3em;
     color: #f9ca4b; }
