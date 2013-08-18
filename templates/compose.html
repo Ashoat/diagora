@@ -5,15 +5,13 @@
 {% from "_form.html" import render_field %}
 {% block body %}
   <h1>Compose a post</h1>
-  <div class="compose">
+  <section class="compose">
     <form method="post">
-      <dl>
         {{ render_field(form.title) }}
         {{ render_field(form.body) }}
-      </dl>
       <input type="submit" name="Submit" />
     </form>
-  </div>
+  </section>
 {% endblock %}
 {% block js %}
 {% endblock %}
