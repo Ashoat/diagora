@@ -14,7 +14,7 @@ class ComposeForm(Form):
 def compose():
   form = ComposeForm(request.form)
   if request.method == 'GET' or not form.validate():
-    return render_template('compose.html', form=form)
+    return render_template('compose.html', form=form, user=current_user)
   rows = select(
     'INSERT INTO posts (title, body, "user") VALUES(%s, %s, %s) RETURNING *',
     (form.title.data, form.body.data, current_user.get_id()),
