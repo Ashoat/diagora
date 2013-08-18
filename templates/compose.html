@@ -4,9 +4,9 @@
 {% endblock %}
 {% from "_form.html" import render_field %}
 {% block body %}
-  <h1>Compose a post</h1>
   <section class="compose">
-    <form method="post">
+      <h1>Compose a post</h1>
+      <form method="post">
         {{ render_field(form.title) }}
         {{ render_field(form.body) }}
       <input type="submit" name="Submit" />
