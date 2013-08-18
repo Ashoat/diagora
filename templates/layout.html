@@ -1,33 +1,45 @@
 <!DOCTYPE html> 
 <html lang="en"> 
-  <head> 
-    <meta charset="utf-8" /> 
-    <link rel="stylesheet" 
-          href="{{ url_for('static', filename='style.css') }}" />
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     {% block header %}{% endblock %}
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>Diagora</h1>
+        <h1><a href="/">Diagora</a></h1>
+        <nav>
+            <ul>
+                {% if user and user.is_authenticated() %}
+                <li>
+                    Logged in as {{ user.name }}
+                </li>
+                <li>
+                    <a href="{{ url_for('login.logout') }}">Log out</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('compose.compose') }}">Log out</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ url_for('login.login') }}"><span>Log in</span></a>
+                </li>
+                <li>
+                    <a href="{{ url_for('login.register') }}"><span>Register</span></a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
-    <span>
-    {% if user and user.is_authenticated() %}
-      Logged in as {{ user.name }} |
-      <a href="{{ url_for('login.logout') }}">Log out</a>
-    {% else %}
-      <a href="{{ url_for('login.login') }}"><span>Log in</span></a> |
-      <a href="{{ url_for('login.register') }}"><span>Register</span></a>
-    {% endif %}
-    </span>
     {% block body %}{% endblock %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js">
     </script>
     <script type="text/javascript" src="//use.typekit.net/owz2joy.js"></script>
     <script type="text/javascript">
-      try {
-        Typekit.load();
-      } catch(e) { }
+    try {
+    Typekit.load();
+    } catch(e) { }
     </script>
     {% block js %}{% endblock %}
-  </body>
+</body>
 </html>

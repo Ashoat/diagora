@@ -58,33 +58,83 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-section.content article header h1, section.content article header h2, section.content section.responses ul li a span.author, section.content section.responses ul li a span.title, section.index ul li a span.author, section.index ul li a span.title {
+section.content article header h1, section.content article header h2, section.content section.responses ul li a span.author, section.content section.responses ul li a span.title, section.index ul li a span.author, section.index ul li a span.title, section h1, section h2, section h3, section h4, section h5, section h6 {
   font-family: "ff-meta-web-pro", sans-serif; }
 
-section.content article p, section.index ul li p {
+form input[type="text"], form input[type="password"], form input[type="datetime-local"], form input[type="number"],
+form input[type="email"], form textarea, form select, section.content article p, section.index ul li p, section {
   font-family: "chaparral-pro", serif; }
 
-section.content section.responses > h1, section.hero, body > header h1, body > header nav ul li a {
+form input[type="submit"], section.content section.responses > h1, section.hero, body > header h1, body > header nav ul li a {
   font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.1em;
   color: #404040; }
 
-section.content article, section.content section.responses, section.hero, section.index, body > header {
+form input[type="text"], form input[type="password"], form input[type="datetime-local"], form input[type="number"],
+form input[type="email"], form textarea, form select {
+  outline: none;
+  border: 1px solid #999999;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 0.5em;
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  background-color: transparent; }
+  form input[type="text"]:focus, form input[type="password"]:focus, form input[type="datetime-local"]:focus, form input[type="number"]:focus,
+  form input[type="email"]:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border: 1px solid #f9ca4b; }
+
+form input[type="submit"] {
+  color: white;
+  background-color: #404040;
+  border: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  -moz-box-shadow: 0 4px 0 #d79f07;
+  -webkit-box-shadow: 0 4px 0 #d79f07;
+  box-shadow: 0 4px 0 #d79f07; }
+
+section.content article, section.content section.responses, section.hero, section.index, section.login, section.register, body > header, section {
   width: 980px;
   margin: 0 auto; }
 
-section.content article::after, section.content section.responses::after, section.hero::after, section.index::after, body > header::after, section.content section.responses ul::after, section.index ul::after, section.content article:after, section.content section.responses:after, section.hero:after, section.index:after, body > header:after, section.content section.responses ul:after, section.index ul:after {
+section.content article::after, body > header::after, section::after, section.content section.responses ul::after, section.index ul::after, form input[type="submit"]::after, form div.field::after, section.content article:after, body > header:after, section:after, section.content section.responses ul:after, section.index ul:after, form input[type="submit"]:after, form div.field:after {
   display: block;
   width: 0;
   height: 0;
   visibility: hidden;
   clear: both; }
 
-section.content article::after, section.content section.responses::after, section.hero::after, section.index::after, body > header::after, section.content section.responses ul::after, section.index ul::after {
+section.content article::after, body > header::after, section::after, section.content section.responses ul::after, section.index ul::after, form input[type="submit"]::after, form div.field::after {
   content: ""; }
-section.content article:after, section.content section.responses:after, section.hero:after, section.index:after, body > header:after, section.content section.responses ul:after, section.index ul:after {
+section.content article:after, body > header:after, section:after, section.content section.responses ul:after, section.index ul:after, form input[type="submit"]:after, form div.field:after {
   content: ""; }
 
 section.content {
@@ -204,6 +254,15 @@ section.index {
       border-bottom: 1px solid #f9ca4b;
       margin: 3em auto; }
 
+section.login {
+  width: 490px; }
+
+section.register {
+  width: 490px; }
+
+section.error {
+  text-align: center; }
+
 body > header {
   margin-top: 1.4em;
   padding-bottom: 1.4em;
@@ -212,15 +271,41 @@ body > header {
   body > header h1 {
     font-size: 1.5184em;
     margin-right: 3em;
-    color: #f9ca4b; }
+    float: left; }
+    body > header h1 a {
+      color: #f9ca4b; }
   body > header nav {
-    float: left;
+    float: right;
     font-size: 0.87862em;
     margin-top: 0.38351em; }
     body > header nav ul {
       padding: 0; }
       body > header nav ul li {
-        list-style-type: none; }
+        list-style-type: none;
+        float: right;
+        margin-right: 1em; }
         body > header nav ul li a {
           color: #f9ca4b;
           font-weight: normal; }
+
+section h1 {
+  font-size: 1.77349em;
+  margin-bottom: 0.73302em; }
+
+form input[type="submit"] {
+  margin-top: 1em;
+  float: right; }
+form ul.errors {
+  color: #f00;
+  padding-top: 3em;
+  text-align: right; }
+form div.field {
+  margin-top: 1em; }
+  form div.field label {
+    float: left;
+    width: 15%;
+    margin-top: 0.9em; }
+  form div.field input {
+    float: right;
+    width: 80%;
+    margin-left: 5%; }
