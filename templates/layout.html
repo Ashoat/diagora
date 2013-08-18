@@ -10,14 +10,15 @@
     <header>
       <h1>Diagora</h1>
     </header>
-    {% if user and user.is_authenticated() %}
     <span>
+    {% if user and user.is_authenticated() %}
       Logged in as {{ user.name }} |
       <a href="{{ url_for('login.logout') }}">Log out</a>
-    </span>
     {% else %}
-    <a href="{{ url_for('login.login') }}"><span>Log in</span></a>
+      <a href="{{ url_for('login.login') }}"><span>Log in</span></a> |
+      <a href="{{ url_for('login.register') }}"><span>Register</span></a>
     {% endif %}
+    </span>
     {% block body %}{% endblock %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js">
     </script>

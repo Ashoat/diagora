@@ -32,7 +32,7 @@ def login():
   if pw_hash != users[0]['hash']:
     return render_template(
       'error.html',
-      message="Could not find user!"
+      message="Could not find user!",
     )
   login_user(User(users[0]), remember=True)
   return redirect(url_for('home.home'))
@@ -73,7 +73,7 @@ def register():
   hexlified = binascii.hexlify(salt)
   rows = select(
     "INSERT INTO users (email, name, hash, salt) VALUES(%s, %s, %s, %s) "
-    "RETURNING id",
+    "RETURNING *",
     (form.email.data, form.name.data, pw_hash, hexlified),
   )
   if not rows:

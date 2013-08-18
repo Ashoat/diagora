@@ -27,8 +27,10 @@ def close_connection(exception):
     db.close()
 
 def select(query, args=()):
-  cursor = get_db().cursor(cursor_factory=psycopg2.extras.DictCursor)
+  conn = get_db()
+  cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
   cursor.execute(query, args)
   results = cursor.fetchall()
+  conn.commit()
   cursor.close()
   return results
