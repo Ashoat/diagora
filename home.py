@@ -1,14 +1,21 @@
 from flask import Blueprint, render_template
 from database import select
+from bs4 import BeautifulSoup
 
 home_bp = Blueprint('home', __name__)
 
 def parse_post(post):
   # Only keep the first line; no newlines please
-  post["body"] = post["body"].splitlines()[0]
+  soup = BeautifulSoup(post["body"])
+  for tag in soup.findAll(True):
+    tag.hidden = True
+  post["body"] = soup.renderContents()
   return post
 
 @home_bp.route('/')
 def home():
-  posts = [parse_post(post) for post in select("SELECT * FROM posts")]
-  return render_template('home.html', posts=posts)
+  posts = select(
+    "SELECT p.*, u.name FROM posts p LEFT JOIN users u ON u.id = p.user"
+  )
+  parsed = [parse_post(post) for post in posts]
+  return render_template('home.html', posts=parsed)

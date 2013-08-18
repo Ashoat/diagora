@@ -4,11 +4,20 @@
     <meta charset="utf-8" /> 
     <link rel="stylesheet" 
           href="{{ url_for('static', filename='style.css') }}" />
-    <title>{% block title %}{% endblock %}</title>
+    {% block header %}{% endblock %}
   </head>
   <body>
+    <header>
+      <h1>Diagora</h1>
+    </header>
     {% block body %}{% endblock %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js">
+    </script>
+    <script type="text/javascript" src="//use.typekit.net/owz2joy.js"></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load();
+      } catch(e) { }
     </script>
     {% block js %}{% endblock %}
   </body>

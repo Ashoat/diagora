@@ -1,10 +1,17 @@
 {% extends "layout.html" %}
-{% block title %}Diagora: {{ post["title"] }}{% endblock %}
+{% block header %}
+  <title>Diagora: {{ post["title"] }}</title>
+{% endblock %}
 {% block body %}
-  <h1>{{ post["title"] }}</h1>
-  <div class="body">
-    {{ post["body"]|safe }}
-  </div>
+  <section class="content">
+    <article>
+      <header>
+        <h1>{{ post["title"] }}</h1>
+        <h2>{{ post["name"] }}</h2>
+      </header>
+      <p>{{ post["body"]|safe }}</p>
+    </article>
+  </section>
 {% endblock %}
 {% block js %}
 {% endblock %}

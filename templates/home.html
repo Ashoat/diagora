@@ -1,17 +1,24 @@
 {% extends "layout.html" %}
-{% block title %}Diagora{% endblock %}
+{% block header %}
+  <title>Diagora</title>
+{% endblock %}
 {% block body %}
-  <h1>Diagora</h1>
-  <div id="posts">
-    {% for post in posts %}
-      <div class="post">
-        <a href="{{ url_for('post.post', post=post["id"]) }}">
-          <h2>{{ post["title"] }}</h2>
-        </a>
-        <span>{{ post["body"]|safe|truncate }}</span>
-      </div>
-    {% endfor %}
-  </div>
+  <section class="hero">
+    <h2>Productive discussions about issues important to you.</h2>
+  </section>
+  <section class="index">
+    <ul>
+      {% for post in posts %}
+        <li>
+          <a href="{{ url_for('post.post', post=post["id"]) }}">
+            <span class="title">{{ post["title"] }}</span>
+            <span class="author">{{ post["name"] }}</span>
+          </a>
+          <p>{{ post["body"]|truncate }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}
 {% block js %}
 {% endblock %}
