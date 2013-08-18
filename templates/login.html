@@ -4,14 +4,14 @@
 {% endblock %}
 {% from "_form.html" import render_field %}
 {% block body %}
-    <section class="login">
-        <h1>Login to Diagora</h1>
-        <form method="post">
-            {{ render_field(form.email) }}
-            {{ render_field(form.password) }}
-            <input type="submit" name="Log in" />
-        </form>
-    </section>
+  <section class="login">
+    <h1>Login to Diagora</h1>
+    <form method="post">
+      {{ render_field(form.email) }}
+      {{ render_field(form.password) }}
+      <input type="submit" name="Log in" />
+    </form>
+  </section>
 {% endblock %}
 {% block js %}
 {% endblock %}

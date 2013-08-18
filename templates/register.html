@@ -4,16 +4,16 @@
 {% endblock %}
 {% from "_form.html" import render_field %}
 {% block body %}
-    <section class="register">
-        <h1>Register with Diagora</h1>
-        <form method="post">
-            {{ render_field(form.name) }}
-            {{ render_field(form.email) }}
-            {{ render_field(form.password) }}
-            {{ render_field(form.confirm) }}
-            <input type="submit" name="Register" />
-        </form>
-    </section>
+  <section class="register">
+    <h1>Register with Diagora</h1>
+    <form method="post">
+      {{ render_field(form.name) }}
+      {{ render_field(form.email) }}
+      {{ render_field(form.password) }}
+      {{ render_field(form.confirm) }}
+      <input type="submit" name="Register" />
+    </form>
+  </section>
 {% endblock %}
 {% block js %}
 {% endblock %}

@@ -5,10 +5,11 @@
 {% from "_form.html" import render_field %}
 {% block body %}
   <section class="compose">
-      <h1>Compose a post</h1>
-      <form method="post">
-        {{ render_field(form.title) }}
-        {{ render_field(form.body) }}
+    <h1>Compose a post</h1>
+    <form method="post">
+      {{ render_field(form.title) }}
+      {{ render_field(form.topics) }}
+      {{ render_field(form.body) }}
       <input type="submit" name="Submit" />
     </form>
   </section>

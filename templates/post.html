@@ -8,6 +8,11 @@
       <header>
         <h1>{{ post["title"] }}</h1>
         <h2>{{ post["name"] }}</h2>
+        <h2>
+          {% for topic in topics %}
+            #{{ topic }} 
+          {% endfor %}
+        </h2>
       </header>
       <p>{{ post["body"]|safe }}</p>
     </article>

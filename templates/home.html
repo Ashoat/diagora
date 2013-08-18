@@ -2,9 +2,15 @@
 {% block header %}
   <title>Diagora</title>
 {% endblock %}
+{% from "_form.html" import render_field %}
 {% block body %}
   <section class="hero">
     <h2>Productive discussions about issues important to you.</h2>
+  </section>
+  <section class="filter" style="width: 500px;">
+    <form method="post" style="margin-bottom: 50px;">
+      {{ form.topics()|safe }}
+    </form>
   </section>
   <section class="index">
     <ul>
