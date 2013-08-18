@@ -10,6 +10,8 @@ class User(UserMixin):
 
   def __init__(self, dictionary):
     self.id = dictionary["id"]
+    self.name = dictionary["name"]
+    self.email = dictionary["email"]
     self.pw_hash = dictionary["hash"]
 
   def get_auth_token(self):

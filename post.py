@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from flask_login import current_user
 from database import select
 
 post_bp = Blueprint('post', __name__)
@@ -16,6 +17,14 @@ def post(post):
     (post,)
   )
   if not posts:
-    return render_template('error.html', message="Could not find post!")
+    return render_template(
+      'error.html',
+      message="Could not find post!",
+      user=current_user,
+    )
   post = parse_post(posts[0])
-  return render_template('post.html', post=post)
+  return render_template(
+    'post.html',
+    post=post,
+    user=current_user,
+  )

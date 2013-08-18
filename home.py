@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from flask_login import current_user
 from database import select
 from bs4 import BeautifulSoup
 
@@ -18,4 +19,8 @@ def home():
     "SELECT p.*, u.name FROM posts p LEFT JOIN users u ON u.id = p.user"
   )
   parsed = [parse_post(post) for post in posts]
-  return render_template('home.html', posts=parsed)
+  return render_template(
+    'home.html',
+    posts=parsed,
+    user=current_user,
+  )

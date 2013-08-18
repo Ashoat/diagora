@@ -1,17 +1,19 @@
 {% extends "layout.html" %}
 {% block header %}
-  <title>Diagora: Login</title>
+  <title>Diagora: Register</title>
 {% endblock %}
 {% from "_form.html" import render_field %}
 {% block body %}
-  <h1>Login to Diagora</h1>
-  <div class="login">
+  <h1>Register with Diagora</h1>
+  <div class="register">
     <form method="post">
       <dl>
+        {{ render_field(form.name) }}
         {{ render_field(form.email) }}
         {{ render_field(form.password) }}
+        {{ render_field(form.confirm) }}
       </dl>
-      <input type="submit" name="Log in" />
+      <input type="submit" name="Register" />
     </form>
   </div>
 {% endblock %}
